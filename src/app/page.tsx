@@ -1,35 +1,42 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import { FileSymlink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggleBtn from "@/components/shared/themeToggle";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center">
+    <main className="flex min-h-screen flex-col items-center justify-center px-4">
+      <div className="container flex flex-col items-center justify-center text-center">
         <Image
-          className="h-auto w-96"
           src="/assets/images/logo wobg.png"
-          alt="logo"
+          alt="Suspense IT Logo"
           width={500}
           height={200}
           priority
-          unoptimized
-          draggable={false}
-          loading="eager"
-          fetchPriority="high"
-          style={{ maxWidth: "100%", height: "auto" }}
-          sizes="(max-width: 768px) 100vw, 50vw"
           quality={100}
+          className="h-auto w-96 max-w-full"
+          draggable={false}
           placeholder="blur"
           blurDataURL="/assets/images/logo wobg.png"
         />
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
+
+        <h1 className="mt-6 text-5xl font-extrabold tracking-tight sm:text-[5rem]">
           Suspense <span className="text-[hsl(280,100%,70%)]">IT</span>
         </h1>
-        <small>Experience Solutions the Suspense Way</small>
-        <Button variant="ghost" className="my-5 cursor-progress">
-          <FileSymlink /> Comming soon
+
+        <p className="text-primary mt-2 mb-4 text-sm sm:text-base">
+          Experience Solutions the Suspense Way
+        </p>
+
+        <Button variant="ghost" className="my-4 cursor-progress">
+          <FileSymlink className="mr-2" aria-hidden="true" />
+          Coming soon
         </Button>
+
+        <Suspense fallback={<div className="text-gray-500">Loading...</div>}>
+          <ThemeToggleBtn />
+        </Suspense>
       </div>
     </main>
   );
