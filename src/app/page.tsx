@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { FileSymlink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
@@ -25,9 +27,9 @@ export default function HomePage() {
           Suspense <span className="text-[hsl(280,100%,70%)]">IT</span>
         </h1>
         <small>Experience Solutions the Suspense Way</small>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          Coming soon...
-        </div>
+        <Button variant="ghost" className="my-5 cursor-progress">
+          <FileSymlink /> Comming soon
+        </Button>
       </div>
     </main>
   );
