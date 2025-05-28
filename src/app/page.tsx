@@ -1,13 +1,11 @@
-import { Suspense } from "react";
 import Image from "next/image";
 import { FileSymlink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ThemeToggleBtn from "@/components/shared/themeToggle";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center px-4">
-      <div className="container flex flex-col items-center justify-center text-center">
+    <main>
+      <div className="flex flex-col items-center justify-center text-center">
         <Image
           src="/assets/images/logo wobg.png"
           alt="Suspense IT Logo"
@@ -33,11 +31,34 @@ export default function HomePage() {
           <FileSymlink className="mr-2" aria-hidden="true" />
           Coming soon
         </Button>
-
-        <Suspense fallback={<div className="text-gray-500">Loading...</div>}>
-          <ThemeToggleBtn />
-        </Suspense>
       </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sint,
+        aut nobis hic voluptates esse dolores dicta nisi harum velit repellat
+        ipsa. Incidunt assumenda velit quasi similique magni error dicta. Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Sed optio debitis
+        atque alias in nostrum minima cum libero vitae, laboriosam facere
+        perspiciatis veniam ipsum! Exercitationem similique odio voluptate
+        laboriosam sit. Recusandae perspiciatis dolorem cupiditate non facilis
+        obcaecati suscipit eaque numquam facere totam dolore ducimus vero qui
+        officiis inventore odit saepe impedit deleniti, unde beatae fugit.
+        Voluptatem, dicta nobis quaerat consequuntur totam magnam tempora iusto
+        sed. Unde expedita quas quam ipsum eius dolorem alias quibusdam
+        doloribus architecto sunt. Impedit, temporibus tempora? Soluta
+        asperiores quo error, iure dolores corrupti rerum dolorum! Distinctio
+        dolorem maiores error quam enim nihil explicabo impedit, tempora vel est
+        natus, eveniet molestiae ex hic accusantium nisi nobis ab doloribus
+        exercitationem iure numquam eum? Aperiam, cupiditate eaque! Fugit minima
+        sapiente veniam similique quos assumenda harum vel, incidunt error
+        voluptates dolore culpa nam quam veritatis quasi exercitationem
+        perferendis soluta nihil reiciendis rem. Necessitatibus asperiores natus
+        officia eos ipsa mollitia excepturi recusandae, amet, sint iure labore
+        nulla! Illo obcaecati voluptatem velit, optio, officia minus quos totam
+        neque ratione laudantium corporis itaque dicta repellat non laboriosam
+        perspiciatis assumenda. Repellendus excepturi nam error, enim, tenetur
+        voluptatibus at et neque pariatur quidem officiis dolorem dolorum esse
+        non impedit laudantium accusantium cum. Quos, officiis iste.
+      </p>
     </main>
   );
 }

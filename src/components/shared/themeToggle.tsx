@@ -9,14 +9,35 @@ const ThemeToggleBtn = () => {
   const { ref, toggleSwitchTheme, isDarkMode } = useModeAnimation();
   const [hasMounted, setHasMounted] = useState(false);
 
+  // Set dark mode as default on first mount
   useEffect(() => {
-    setHasMounted(true);
+    if (typeof window !== "undefined") {
+      const theme = localStorage.getItem("theme");
+      const htmlEl = document.documentElement;
+
+      if (!theme) {
+        localStorage.setItem("theme", "dark");
+        htmlEl.classList.add("dark");
+      } else if (theme === "dark") {
+        htmlEl.classList.add("dark");
+      } else {
+        htmlEl.classList.remove("dark");
+      }
+
+      setHasMounted(true);
+    }
   }, []);
 
   if (!hasMounted) return null;
 
   return (
-    <Button variant="ghost" ref={ref} onClick={toggleSwitchTheme}>
+    <Button
+      className="cursor-pointer rounded-full"
+      size="icon"
+      variant="ghost"
+      ref={ref}
+      onClick={toggleSwitchTheme}
+    >
       {isDarkMode ? <Sun /> : <Moon />}
     </Button>
   );
