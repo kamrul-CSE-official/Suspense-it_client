@@ -22,7 +22,7 @@ export default function HomePage() {
         />
 
         <h1 className="mt-6 text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-          Suspense <span className="text-[hsl(280,100%,70%)]">IT</span>
+          Suspense <span className="text-primary">IT</span>
         </h1>
 
         <p className="text-primary mt-2 mb-4 text-sm sm:text-base">
