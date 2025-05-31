@@ -4,11 +4,42 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import RootProvider from "./rootProvider";
 
+const siteName = "Suspense-IT";
+const siteUrl = "https://www.suspense-it.com"; // Change to your real domain
+const ogImage = `${siteUrl}/assets/images/og-image.png`; // Create a proper 1200x630 image
+
 export const metadata: Metadata = {
-  title: "Suspense-IT | Home",
+  title: `${siteName} | Home`,
   description:
-    "Suspense-IT is a forward-thinking software development company providing full-stack web development, mobile app development, and custom software solutions for startups and enterprises. Our team specializes in React, Next.js, TypeScript, JavaScript, Node.js, Python, Flutter, MongoDB, PostgreSQL, and cloud platforms like AWS and Firebase. From scalable backend systems to responsive frontend interfaces, we deliver high-performance digital products tailored to business goals. Whether you're building SaaS platforms, e-commerce sites, admin dashboards, APIs, or cross-platform mobile apps, Suspense-IT brings innovation, quality, and speed to every project. Partner with us to bring your digital vision to life.",
+    "Suspense-IT is a forward-thinking software development company offering full-stack web and mobile app solutions tailored to startups and enterprises.",
   icons: [{ rel: "icon", url: "/assets/images/fav.png" }],
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: `${siteName} | Home`,
+    description:
+      "Suspense-IT provides innovative full-stack development services using React, Next.js, Node.js, Python, Flutter, and cloud platforms like AWS and Firebase.",
+    url: siteUrl,
+    siteName,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Suspense-IT – Full Stack Development",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteName} | Home`,
+    description:
+      "High-performance software solutions for startups and enterprises – Suspense-IT.",
+    images: [ogImage],
+    creator: "@suspenseit", // (Optional) Add your Twitter handle
+  },
+  themeColor: "#7e22ce", // Optional: primary brand color for browser UI
 };
 
 const geist = Geist({
@@ -20,8 +51,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html suppressHydrationWarning lang="en" className={`${geist.variable}`}>
+    <html lang="en" className={geist.variable}>
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="shortcut icon"
           href="/assets/images/fav.png"
