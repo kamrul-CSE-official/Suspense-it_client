@@ -34,51 +34,59 @@ export function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="relative py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-purple-500 text-purple-400">
+        <div className="mb-16 text-center">
+          <Badge
+            variant="outline"
+            className="mb-4 border-purple-500 text-purple-400"
+          >
             Get In Touch
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Start Your Project</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to transform your ideas into reality? Contact us today and let's discuss how we can help you achieve
-            your goals.
+          <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">
+            Let&apos;s Start Your Project
+          </h2>
+          <p className="mx-auto max-w-3xl text-xl text-gray-300">
+            Ready to transform your ideas into reality? Contact us today and
+            let&apos;s discuss how we can help you achieve your goals.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {contactInfo.map((info, index) => (
             <Card
               key={index}
-              className="bg-slate-800/50 border-slate-700 hover:border-purple-500/50 transition-all duration-300 group"
+              className="group border-slate-700 bg-slate-800/50 transition-all duration-300 hover:border-purple-500/50"
             >
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 transition-transform duration-300 group-hover:scale-110">
                   <info.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
-                <p className="text-gray-400 text-sm mb-3">{info.description}</p>
-                <p className="text-purple-400 font-medium">{info.value}</p>
+                <h3 className="mb-2 text-xl font-bold text-white">
+                  {info.title}
+                </h3>
+                <p className="mb-3 text-sm text-gray-400">{info.description}</p>
+                <p className="font-medium text-purple-400">{info.value}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Contact Form */}
-          <Card className="bg-slate-800/50 border-slate-700">
+          <Card className="border-slate-700 bg-slate-800/50">
             <CardHeader>
-              <CardTitle className="text-white text-2xl flex items-center">
-                <MessageSquare className="h-6 w-6 mr-2 text-purple-400" />
+              <CardTitle className="flex items-center text-2xl text-white">
+                <MessageSquare className="mr-2 h-6 w-6 text-purple-400" />
                 Send us a message
               </CardTitle>
               <CardDescription className="text-gray-300">
-                Fill out the form below and we'll get back to you within 24 hours.
+                Fill out the form below and we&apos;ll get back to you within 24
+                hours.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="firstName" className="text-white">
                     First Name
@@ -86,7 +94,7 @@ export function ContactSection() {
                   <Input
                     id="firstName"
                     placeholder="John"
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                    className="border-slate-600 bg-slate-700 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="space-y-2">
@@ -96,7 +104,7 @@ export function ContactSection() {
                   <Input
                     id="lastName"
                     placeholder="Doe"
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                    className="border-slate-600 bg-slate-700 text-white placeholder:text-gray-400"
                   />
                 </div>
               </div>
@@ -109,7 +117,7 @@ export function ContactSection() {
                   id="email"
                   type="email"
                   placeholder="john@example.com"
-                  className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                  className="border-slate-600 bg-slate-700 text-white placeholder:text-gray-400"
                 />
               </div>
 
@@ -120,7 +128,7 @@ export function ContactSection() {
                 <Input
                   id="company"
                   placeholder="Your Company"
-                  className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                  className="border-slate-600 bg-slate-700 text-white placeholder:text-gray-400"
                 />
               </div>
 
@@ -132,12 +140,12 @@ export function ContactSection() {
                   id="message"
                   placeholder="Tell us about your project..."
                   rows={5}
-                  className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                  className="border-slate-600 bg-slate-700 text-white placeholder:text-gray-400"
                 />
               </div>
 
               <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                <Send className="h-4 w-4 mr-2" />
+                <Send className="mr-2 h-4 w-4" />
                 Send Message
               </Button>
             </CardContent>
@@ -145,10 +153,10 @@ export function ContactSection() {
 
           {/* Additional Info */}
           <div className="space-y-8">
-            <Card className="bg-slate-800/50 border-slate-700">
+            <Card className="border-slate-700 bg-slate-800/50">
               <CardHeader>
-                <CardTitle className="text-white text-xl flex items-center">
-                  <Clock className="h-5 w-5 mr-2 text-purple-400" />
+                <CardTitle className="flex items-center text-xl text-white">
+                  <Clock className="mr-2 h-5 w-5 text-purple-400" />
                   Business Hours
                 </CardTitle>
               </CardHeader>
@@ -168,10 +176,10 @@ export function ContactSection() {
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-800/50 border-slate-700">
+            <Card className="border-slate-700 bg-slate-800/50">
               <CardHeader>
-                <CardTitle className="text-white text-xl flex items-center">
-                  <Calendar className="h-5 w-5 mr-2 text-purple-400" />
+                <CardTitle className="flex items-center text-xl text-white">
+                  <Calendar className="mr-2 h-5 w-5 text-purple-400" />
                   Schedule a Meeting
                 </CardTitle>
                 <CardDescription className="text-gray-300">
@@ -179,22 +187,28 @@ export function ContactSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full border-purple-500 text-purple-400 hover:bg-purple-500/10">
+                <Button
+                  variant="outline"
+                  className="w-full border-purple-500 text-purple-400 hover:bg-purple-500/10"
+                >
                   Book a Call
-                  <ArrowRight className="h-4 w-4 ml-2" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/30">
+            <Card className="border-purple-500/30 bg-gradient-to-r from-purple-600/20 to-pink-600/20">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">Ready to get started?</h3>
-                <p className="text-gray-300 mb-4">
-                  Join 500+ companies that trust us with their software development needs.
+                <h3 className="mb-3 text-xl font-bold text-white">
+                  Ready to get started?
+                </h3>
+                <p className="mb-4 text-gray-300">
+                  Join 500+ companies that trust us with their software
+                  development needs.
                 </p>
                 <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                   Start Your Project
-                  <ArrowRight className="h-4 w-4 ml-2" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -202,5 +216,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
