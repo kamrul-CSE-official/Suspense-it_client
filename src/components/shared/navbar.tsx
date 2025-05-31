@@ -31,6 +31,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import ThemeToggleBtn from "./themeToggle";
+import PrimaryBtn from "./primaryBtn";
 
 interface MenuItem {
   title: string;
@@ -197,9 +198,9 @@ const Navbar: FC<NavbarProps> = ({
             <Button asChild variant="outline" size="sm">
               <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
-            <Button asChild size="sm">
+            <PrimaryBtn size="sm">
               <Link href={auth.signup.url}>{auth.signup.title}</Link>
-            </Button>
+            </PrimaryBtn>
           </div>
         </div>
 
@@ -255,9 +256,9 @@ const Navbar: FC<NavbarProps> = ({
                   <Button asChild variant="outline">
                     <Link href={auth.login.url}>{auth.login.title}</Link>
                   </Button>
-                  <Button asChild>
+                  <PrimaryBtn>
                     <Link href={auth.signup.url}>{auth.signup.title}</Link>
-                  </Button>
+                  </PrimaryBtn>
                 </div>
               </div>
             </SheetContent>
