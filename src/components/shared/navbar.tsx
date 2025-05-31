@@ -134,22 +134,23 @@ const Navbar: FC<NavbarProps> = ({
   },
 }) => {
   return (
-    <header className="py-4 px-4 w-full bg-background shadow-md fixed top-0 left-0 z-50">
+    <header className="bg-background fixed top-0 left-0 z-50 w-full px-4 py-4 shadow-md">
       <div className="flex items-center justify-between">
-        <Link href={logo.url} className="flex items-center gap-2">
-          <Logo className="w-1/4" />
-          <span className="text-lg font-semibold">Suspense <span className="text-primary">IT</span></span>
+        <Link href={logo.url}>
+          <Logo />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center justify-between w-full max-w-4xl ml-8">
+        <div className="ml-8 hidden w-full max-w-4xl items-center justify-between lg:flex">
           <NavigationMenu>
             <NavigationMenuList>
               {menu.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   {item.items ? (
                     <>
-                      <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                      <NavigationMenuTrigger>
+                        {item.title}
+                      </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-popover text-popover-foreground">
                         <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
                           {item.items.map((subItem) => (
@@ -157,13 +158,15 @@ const Navbar: FC<NavbarProps> = ({
                               <NavigationMenuLink asChild>
                                 <a
                                   href={subItem.url}
-                                  className="flex items-start gap-4 rounded-md p-2 hover:bg-muted transition"
+                                  className="hover:bg-muted flex items-start gap-4 rounded-md p-2 transition"
                                 >
                                   <div>{subItem.icon}</div>
                                   <div>
-                                    <p className="text-sm font-medium">{subItem.title}</p>
+                                    <p className="text-sm font-medium">
+                                      {subItem.title}
+                                    </p>
                                     {subItem.description && (
-                                      <p className="text-sm text-muted-foreground">
+                                      <p className="text-muted-foreground text-sm">
                                         {subItem.description}
                                       </p>
                                     )}
@@ -178,7 +181,7 @@ const Navbar: FC<NavbarProps> = ({
                   ) : (
                     <NavigationMenuLink
                       href={item.url}
-                      className="px-4 py-2 text-sm font-medium rounded-md hover:bg-muted transition"
+                      className="hover:bg-muted rounded-md px-4 py-2 text-sm font-medium transition"
                     >
                       {item.title}
                     </NavigationMenuLink>
@@ -190,7 +193,7 @@ const Navbar: FC<NavbarProps> = ({
           </NavigationMenu>
 
           {/* Auth */}
-          <div className="flex gap-2 ml-8">
+          <div className="ml-8 flex gap-2">
             <Button asChild variant="outline" size="sm">
               <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
@@ -212,12 +215,12 @@ const Navbar: FC<NavbarProps> = ({
               <SheetHeader>
                 <SheetTitle>
                   <Link href={logo.url} className="flex items-center gap-2">
-                    <Logo sm="h-10 w-10" />
+                    <Logo />
                     <span className="text-lg font-semibold">{logo.title}</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>
-              <div className="mt-4 space-y-6 mx-4">
+              <div className="mx-4 mt-4 space-y-6">
                 <Accordion type="single" collapsible>
                   {menu.map((item) =>
                     item.items ? (
@@ -228,7 +231,7 @@ const Navbar: FC<NavbarProps> = ({
                             <Link
                               key={subItem.title}
                               href={subItem.url}
-                              className="block py-2 text-sm text-muted-foreground hover:text-primary"
+                              className="text-muted-foreground hover:text-primary block py-2 text-sm"
                             >
                               {subItem.title}
                             </Link>
@@ -243,7 +246,7 @@ const Navbar: FC<NavbarProps> = ({
                       >
                         {item.title}
                       </Link>
-                    )
+                    ),
                   )}
                   <ThemeToggleBtn />
                 </Accordion>

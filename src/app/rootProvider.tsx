@@ -6,7 +6,7 @@ function RootProvider({ children }: { children: React.ReactNode }) {
   return (
     <main>
       <Navbar />
-      <div className="max-w-6xl mx-auto mt-14">{children}</div>
+      <div className="mx-auto mt-7 max-w-6xl">{children}</div>
       <Footer />
     </main>
   );

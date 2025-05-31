@@ -2,6 +2,7 @@ import { Code, Zap, Github, Twitter, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import Logo from "./logo";
 
 export function Footer() {
   const footerLinks = {
@@ -29,36 +30,52 @@ export function Footer() {
       { name: "Cookie Policy", href: "#" },
       { name: "GDPR", href: "#" },
     ],
-  }
+  };
 
   return (
-    <footer className="bg-slate-700 dark:bg-slate-900 border-t border-slate-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+    <footer className="bg-background border-t border-gray-300 text-gray-800 dark:border-slate-800 dark:text-gray-200">
+      <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="relative">
-                <Code className="h-8 w-8 text-purple-400" />
-                <Zap className="h-4 w-4 text-yellow-400 absolute -top-1 -right-1" />
-              </div>
-              <span className="text-xl font-bold text-white">Suspense IT</span>
+            <div className="mb-4 flex items-center space-x-2">
+              <Logo />
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                Suspense IT
+              </span>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Transforming ideas into digital reality. We create innovative software solutions that drive business
-              growth and digital transformation.
+            <p className="mb-6 max-w-md text-gray-600 dark:text-gray-300">
+              Transforming ideas into digital reality. We create innovative
+              software solutions that drive business growth and digital
+              transformation.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-purple-400">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+              >
                 <Github className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-purple-400">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+              >
                 <Twitter className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-purple-400">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+              >
                 <Linkedin className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-purple-400">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+              >
                 <Mail className="h-5 w-5" />
               </Button>
             </div>
@@ -66,11 +83,16 @@ export function Footer() {
 
           {/* Links Sections */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Company
+            </h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 hover:text-purple-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 transition-colors hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -79,11 +101,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Services
+            </h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 hover:text-purple-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 transition-colors hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -92,11 +119,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Resources
+            </h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 hover:text-purple-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 transition-colors hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -105,11 +137,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Legal
+            </h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 hover:text-purple-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 transition-colors hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -119,18 +156,22 @@ export function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="border-t border-slate-800 mt-12 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="mt-12 border-t border-gray-300 pt-8 dark:border-slate-800">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div>
-              <h3 className="text-white font-semibold mb-2">Stay Updated</h3>
-              <p className="text-gray-400">Subscribe to our newsletter for the latest updates and insights.</p>
+              <h3 className="mb-2 font-semibold text-gray-900 dark:text-white">
+                Stay Updated
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                Subscribe to our newsletter for the latest updates and insights.
+              </p>
             </div>
             <div className="flex space-x-2">
               <Input
                 placeholder="Enter your email"
-                className="bg-slate-800 border-slate-700 text-white placeholder:text-gray-400"
+                className="border border-gray-300 bg-white text-gray-800 placeholder:text-gray-500 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-gray-400"
               />
-              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700">
                 Subscribe
               </Button>
             </div>
@@ -138,11 +179,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 Suspense IT. All rights reserved.</p>
-          <p className="text-gray-400 text-sm mt-2 md:mt-0">Made with ❤️ by the Suspense IT team</p>
+        <div className="mt-8 flex flex-col items-center justify-between border-t border-gray-300 pt-8 text-sm text-gray-600 md:flex-row dark:border-slate-800 dark:text-gray-400">
+          <p>© 2024 Suspense IT. All rights reserved.</p>
+          <p className="mt-2 md:mt-0">Made with ❤️ by the Suspense IT team</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
